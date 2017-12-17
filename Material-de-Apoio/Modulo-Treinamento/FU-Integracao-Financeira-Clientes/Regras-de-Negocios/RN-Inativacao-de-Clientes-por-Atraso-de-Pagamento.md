@@ -5,7 +5,7 @@
 
 # Regra de Negócios: Inativação de Clientes por Atraso de Pagamento
 
-Um cliente pode ser _inativado_, sendo cessado o fornecimento de serviços ao mesmo, se este estiver com 3 (três) ou mais parcelas em atraso.
+Um cliente pode ser _inativado_, sendo cessado o fornecimento de serviços ao mesmo, se este estiver com 3 (três) ou mais parcelas em atraso ou se o cliente já tiver sido bloqueado pelo menos uma vez nos últimos doze meses.
 A inativação deve ser realizada pelo **Analista Financeiro** validado por permissão de acesso à tela destinada à este fim. Caso se trate de um cliente especial, denominado: _premium_, a inativação só poderá ser realizada com aprovação do **Gerente de Contas**, validado por permissão especial.
 
 **Parametrizações:**
