@@ -120,6 +120,14 @@ Exceção quando o **Gerente de Contas** aprova a inativação do cliente, poré
 3. **Sistema** retorna ao passo 2 do fluxo alternativo [[AL01](#al01-inativar-cliente-premium)]
 
 
+### EX07: Analista Financeiro não informa a observação para inativação do cliente
+
+Exceção quando **Analista Financeiro** não informa a observação para inativar o cliente.
+
+1. **Sistema** exibe mensagem: _"Informe uma observação para inativar o cliente"_.
+2. **Sistema** retorna ao passo 5 do [[PR](#pr-inativar-cliente-b-sico)]
+
+
 _[Sobre o Portal de Documentação](../../../About/About.md)_
 
 ![Rodape](../../../ReadMe-Anexos/Rodape.png)
