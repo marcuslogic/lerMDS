@@ -31,7 +31,7 @@
   - Plano (cf: [RN-Planos de Clientes](../Regras-de-Negocios/RN-Planos-de-Clientes.md))
   - Número de meses em atraso
 6. **Analista Financeiro** seleciona um cliente **básico** cf: [RN-Planos de Clientes](RN-Planos-de-Clientes.md) [3] [[AL01](#al01-inativar-cliente-premium)] [[EX02](#ex02-analista-financeiro-n-o-seleciona-um-cliente)] [4].
-7. **Analista Financeiro** aciona opção para inativar o cliente.
+7. **Analista Financeiro** aciona opção para inativar o cliente e informa uma observação.
 8. **Sistema** registra a inativação cessando o fornecimento de serviços a este cliente. [[EX03](#ex03-ocorreu-um-erro-interno-no-sistema-durante-a-inativa-o)]
 9. **Fim do Caso de Uso** [5]
 
