@@ -64,12 +64,12 @@ Deve ficar claro no caso de uso quando um fluxo qualquer tiver algum passo que p
 
 ### AL02: Verificar Últimos Dez Clientes Inativados
 
-1. **Analista Financeiro** seleciona um cliente **Preminum** cf: [RN-Planos de Clientes](RN-Planos-de-Clientes.md) [[EX02](#ex02-analista-financeiro-n-o-seleciona-um-cliente)] [1]
-2. **Sistema** solicita confirmação pelo **Gerente de Contas**
-3. **Gerente de Contas** informa sua identificação (login e senha) e aciona comando para aprovar [[EX04](#ex04-gerente-de-contas-n-o-informa-login-senha)] [[EX05](#ex05-gerente-de-contas-n-o-confirma-a-inativa-o)]
-4. **Analista Financeiro** aciona opção para inativar o cliente.
-5. **Sistema** confirma que o **Gerente de Contas** possui permissão para inativação de clientes **premium** [[EX06](#ex06)] [2]
-6. **Sistema** registra a inativação cessando o fornecimento de serviços a este cliente [[EX03](#ex03-ocorreu-um-erro-interno-no-sistema-durante-a-inativa-o)].
+1. **Analista Financeiro** seleciona opção para verificar os últimos dez clientes inativados.
+2. **Sistema** obtém na base de dados os últimos dez clientes inativados.
+5. **Sistema** apresenta a listagem dos últimos dez clientes inativados com:
+  - Nome
+  - Plano (cf: [RN-Planos de Clientes](../Regras-de-Negocios/RN-Planos-de-Clientes.md))
+  - Número de meses em atraso
 7. **Sistema** retorna ao passo 2 do [[PR](#pr-inativar-cliente-b-sico)]
 
 _Notas:_
