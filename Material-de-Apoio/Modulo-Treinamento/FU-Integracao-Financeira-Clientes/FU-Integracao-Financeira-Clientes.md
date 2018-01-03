@@ -13,6 +13,7 @@ _Em  breve..._
 | Caso de Uso                                                                                                | Descrição                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | [UC-Inativar Cliente por Atraso de Pagamento](Casos-de-Uso/UC-Inativar-Cliente-por-Atraso-de-Pagamento.md) | Inativar Clientes inadimplentes por falta de pagamento                                                                                |
+| [UC-Reativar Cliente](Casos-de-Uso/UC-Reativar-Cliente.md)                                                 | Reativar Clientes com pagamentos regularizados                                                                                        |
 
 
 _[Sobre o Portal de Documentação](../../About/About.md)_
