@@ -78,11 +78,20 @@ Fluxo executado pelo **Gerente de Contas** para aprovação de cliente recém ca
 2. **Gerente de Contas** informa os dados para aprovação
   - Plano do Clientes (Premium ou Básico)
   - Código da Conta Contábil (para efeitos de balancete/DRE)
+  - Limite de Compras Mensal A Prazo 
 3. **Gerente de Contas** aciona o comando para aprovar o cadastro.
 4. **Sistema** solicita o código de usuário e senha do **Gerente de Contas**
 5. **Gerente de Contas** informa sua identificação (login e senha) [[EX07](#ex07-gerente-de-contas-n-o-informa-login-senha-para-aprovar-um-cadastro)] [[EX08](#ex08-gerente-de-contas-n-o-confirma-a-aprova-o)].
 4. **Sistema** atualiza a situação cadastral do cliente para APROVADPO, cf: [RN-Situação Cadastral Cliente](../Regras-de-Negocios/RN-Situacao-Cadastral-Cliente.md)
 6. **Sistema** retorna ao passo 3 do fluxo [[PR](#pr-incluir-cliente)]
+
+
+### AL05: Validar Cálculo Limite de Compras a Prazo Mensal
+
+Fluxo executado pelo **Sistema** para aprovação do valor informado pelo **Gerente de Contas** no campo Limite de Compras Mensal A Prazo.
+
+1. **Gerente de Contas** informa um valor para o campo Limite de Compras Mensal A Prazo.
+2. **Sistema** verfica se o valor do parâmetro usado no cálculo é maior ou igual que 10 e menor ou igual que 70. Caso o valor do parâmetro seja inválido, executa o cálculo usando o valor 20 como parâmetro, conforme regra [RN-Situação Cadastral Cliente](../Regras-de-Negocios/RN-Situacao-Cadastral-Cliente.md)
 
 
 ## Fluxos de Exceção
@@ -96,6 +105,7 @@ Exceção quando **Auxiliar de Cadastro** não preenche todas as informações o
 
 ### EX02: Auxiliar de Cadastro não informa os filtros para pesquisar
 
+
 Exceção quando **Auxiliar de Cadastro** não informa os filtros de pesquisa e aciona o comando para pesquisar clientes.
 
 1. **Sistema** exibe mensagem: _"Informe ao menos um filtro  para consulta."_.
@@ -103,10 +113,12 @@ Exceção quando **Auxiliar de Cadastro** não informa os filtros de pesquisa e 
 
 ### EX03: Não foram encontrados clientes com filtros informados
 
+
 Exceção quando não há clientes cadastrados com os filros informados pelo **Auxiliar de Cadastro** na consulta de clientes.
 
 1. **Sistema** exibe mensagem: _"Não foram encontrados clientes com os filtros informados."_.
 2. **Sistema** retorna ao passo 2 do fluxo [[AL01](#al01-consultar-cliente)]
+
 
 ### EX04: Situação cadastral do cliente é INATIVA
 
@@ -123,6 +135,7 @@ Exceção quando o **Gerente de Contas** busca por um cliente cuja situação ca
 1. **Sistema** não disponibiliza opção de comando para _Aprovar_
 2. **Sistema** retorna ao passo 5 do fluxo [[AL01](#al01-consultar-cliente)]
 
+
 ### EX06: Gerente de Contas não informa os dados necessários para Aprovar um Cadastro
 
 Exceção quando o **Gerente de Contas** não informa os dados necessários para Aprovar um Cadastro cf: [RN-Aprovação Cadastro Clientes](../Regras-de-Negocios/RN-Aprovacao-Cadastro-Clientes.md), o que impossibilita sua aprovação.
@@ -138,11 +151,20 @@ Exceção quando o **Gerente de Contas** não informa seu Login e Senha para apr
 1. **Sistema** exibe mensagem: _"Informe o Login e a Senha para Aprovação do Cadastro do Cliente"_.
 2. **Sistema** retorna ao passo 2 do fluxo [[AL04](#al04-aprovar-cadastro-de-cliente)]
 
+
 ### EX08: Gerente de Contas não confirma a Aprovação
 
 Exceção quando o **Gerente de Contas** se recusa a aprovar o cadastro do cliente, acionando opção "Recusar".
 
 1. **Sistema** exibe mensagem: _"Cadastro Não Aprovado."_.
+2. **Sistema** retorna ao passo 2 do fluxo [[AL04](#al04-aprovar-cadastro-de-cliente)]
+
+
+### EX09: Gerente de Contas informa valor inválido para Limite de Compras Mensal A Prazo
+
+Exceção quando o **Gerente de Contas** informa um valor inválido para Limite de Compras Mensal A Prazo, de acordo com a regra [RN-Aprovação Cadastro Clientes](../Regras-de-Negocios/RN-Aprovacao-Cadastro-Clientes.md).
+
+1. **Sistema** exibe mensagem: _"Limite de compras a prazo está fora do valor aceitável."_.
 2. **Sistema** retorna ao passo 2 do fluxo [[AL04](#al04-aprovar-cadastro-de-cliente)]
 
 
