@@ -6,7 +6,7 @@
 # Regra de Negócios: Reativação de Cliente
 
 Um cliente pode ser _reativado_ se este não estiver com nenhuma parcela em atraso, para clientes do Plano Básico, ou se tiver apenas uma parcela em atraso, somente caso seja cliente do Plano Premium.
-A reativação deve ser realizada pelo **Analista Financeiro** validado por permissão de acesso à tela destinada à este fim. Qualquer reativação só poderá ser realizada com aprovação do **Gerente de Contas**, validado por permissão especial.
+A reativação deve ser realizada pelo **Analista Financeiro** validado por permissão de acesso à tela destinada à este fim. O **Analista Financeiro** deve informar a data de pagamento dos débitos em atraso. Esta data deve ser menor que a data atual e maior que a data da inativação. Qualquer reativação só poderá ser realizada com aprovação do **Gerente de Contas**, validado por permissão especial.
 
 **Parametrizações:**
 - O limite de meses para cliente do Plano Básico é parametrável pela chave: `sistema.financeiro.quantidade_parcelas_minimas_reativacao_basico`, com valor padrão: 0 (três meses)
